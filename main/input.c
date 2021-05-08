@@ -15,8 +15,30 @@ Instructions: 1. AddBank
               8. Exit
 */
 
+
+char curr_names[N][4];
+
+int findpos(char arr[])
+{
+  for(int i=0;i<N;i++)
+  {
+    if(!strcmp(arr,curr_names[i]))
+    {
+      return i;
+    }
+  }
+}
+
 int main()
 {
+  FILE* fp2;
+   fp2=fopen("names.txt","r"); 
+
+   for(int i=0;i< N;i++)
+   {
+    fscanf(fp2,"%s",curr_names[i]);
+   } 
+  fclose(fp2);
    FILE* fp;
    int ins,n,name,curr,V,b=0,src,dest,weight;
    char buf,Name_bank[5],instruction[21];
@@ -55,7 +77,7 @@ int main()
                   else printf("Banks can't be added\n");
                   for(int i= 0;i<n;i++)
                   {
-        AddConversion(&arr_banks[num-1]->head[arr[i].src],arr[i].dest,arr[i].weight);
+        AddConversion(&arr_banks[num]->head[arr[i].src],arr[i].dest,arr[i].weight);
                   }
                   free(arr);
                   free(ver);
