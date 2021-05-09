@@ -64,11 +64,15 @@ int main()
                   fscanf(fp,"%c%s %d %d",&buf,Name_bank,&V,&n);
                   int* ver =(int*)malloc(V*sizeof(int));
                   for(int i=0;i<V;i++){
-                      fscanf(fp,"%d",&ver[i]);
+                    //  fscanf(fp,"%d",&ver[i]);
+                    fscanf(fp,"%c%s", &buf, curren);
+                    ver[i] = findpos(curren);
                   }
                   struct Edge* arr=(struct Edge*)malloc(n*sizeof(struct Edge));
                   for(int i=0;i<n;i++){
-                  fscanf(fp,"%c%d %d %d",&buf,&arr[i].src,&arr[i].dest,&arr[i].weight);
+                  fscanf(fp,"%c%s %s %d",&buf,curren,curren2,&arr[i].weight);
+                  arr[i].src = findpos(curren);
+                  arr[i].dest = findpos(curren2);
                   }
                   if(num<MAX) {
                   delete[num]=1;
@@ -156,7 +160,5 @@ int main()
         }
    }
    fclose(fp);
-  
-}
   
 }
