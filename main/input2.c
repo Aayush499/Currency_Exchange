@@ -100,7 +100,7 @@ int main()
                   curr = findpos(curren); 
                   if(delete[name]==1 && arr_banks[name]->refer[curr]!=1)    
                   AddCurrency(curr,arr_banks[name]);
-                  else if(delete[name]!=1 && arr_banks[name]->refer[curr]!=1) printf("%d IS NOT POSSIBLE TO ADD IN %d BANK \n",curr,name);
+                  else if(delete[name]!=1) printf("%d IS NOT POSSIBLE TO ADD IN %d BANK \n",curr,name);
                   else if(delete[name]==1 && arr_banks[name]->refer[curr]==1) printf("%d IS ALREADY PRESENT IN %d BANK\n",curr,name);
                  // getchar();
                   break;
