@@ -81,23 +81,27 @@ int main(void)
                 wei = ranNo(MAXWEIGHT);
                 printf("%d %d %d\n", src, dest, wei);
             }
+            break;
 
         case (2):
             printf("DeleteBank\n");
             nBank = ranNo(MAX);
             printf("%d\n", nBank);
+            break;
 
         case (3):
             printf("AddCurrencyInBank\n");
             curr = ranNo(N);
             nBank = ranNo(MAX);
             printf("%d %s\n", nBank, names[curr]);
+            break;            
 
         case (4):
             printf("DeleteCurrencyInBank\n");
             curr = ranNo(N);
             nBank = ranNo(MAX);
             printf("%d %s\n", nBank, names[curr]);
+            break;
 
         case (5):
             printf("AddConversion\n");
@@ -106,6 +110,7 @@ int main(void)
             dest = ranNo(N);
             wei = ranNo(MAXWEIGHT);
             printf("%d %s %s %d\n", nBank, names[src], names[dest], wei);
+            break;
 
         case (6):
             printf("DeleteConversion\n");
@@ -114,21 +119,25 @@ int main(void)
             dest = ranNo(N);
             wei = ranNo(MAXWEIGHT);
             printf("%d %s %s %d\n", nBank, names[src], names[dest], wei);
+            break;
 
         case (7):
             printf("BestWay\n");
             src = ranNo(N);
             dest = ranNo(N);
             printf("%s %s\n", names[src], names[dest]);
+            break;
 
         case (8):
             printf("PrintBankInfo\n");
             nBank = ranNo(MAX);
             printf("%d\n", nBank);
+            break;
 
         case (9):
             printf("Exit\n");
             exit(0);
+            break;
         }
     }
 }
