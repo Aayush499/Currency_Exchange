@@ -112,15 +112,6 @@ void printGraph(struct Graph *graph, char names[][4])
     }
 }
 
-/*void AddConversion(struct Node** head_ref,int dest,int weight)
-{
-    struct Node* curr= *head_ref;
-    struct Node* newnode=(struct Node*)malloc(sizeof(struct Node));
-    newnode->dest=dest;
-    newnode->weight=weight;
-    newnode->next=curr->next;
-    curr->next=newnode;
-}*/
 
 bool search(struct Node *head, int x)
 {
