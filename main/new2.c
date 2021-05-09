@@ -94,7 +94,7 @@ int find_min(long long int A[], int n)
 ////////////////////////////////////////
 
 // Function to print adjacency list representation of a graph
-void printGraph(struct Graph *graph)
+void printGraph(struct Graph *graph, char names[][4])
 {
     int i;
     printf("%s\n", graph->name);
@@ -104,7 +104,7 @@ void printGraph(struct Graph *graph)
         struct Node *ptr = graph->head[i];
         while (ptr != NULL)
         {
-            printf("%d —> %d (%d)\t", i, ptr->dest, ptr->weight);
+            printf("%s —> %s (%d)\t", names[i], names[ptr->dest], ptr->weight);
             ptr = ptr->next;
         }
 
