@@ -94,7 +94,7 @@ int main()
                   fscanf(fp,"%c%d %d",&buf,&name,&curr); 
                   if(delete[name]==1 && arr_banks[name]->refer[curr]!=1)    
                   AddCurrency(curr,arr_banks[name]);
-                  else if(delete[name]!=1 && arr_banks[name]->refer[curr]!=1) printf("NOT POSSIBLE BANK IS NOT ADDED\n");
+                  else if(delete[name]!=1 ) printf("NOT POSSIBLE BANK IS NOT ADDED\n");
                   else if(delete[name]==1 && arr_banks[name]->refer[curr]==1) printf("ALREADY PRESENT\n");
                  // getchar();
                   break;
