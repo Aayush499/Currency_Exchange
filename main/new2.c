@@ -108,7 +108,7 @@ void printGraph(struct Graph* graph)
     }
 }
 
-void AddConversion(struct Node** head_ref,int dest,int weight)
+/*void AddConversion(struct Node** head_ref,int dest,int weight)
 {
     struct Node* curr= *head_ref;
     struct Node* newnode=(struct Node*)malloc(sizeof(struct Node));
@@ -116,22 +116,22 @@ void AddConversion(struct Node** head_ref,int dest,int weight)
     newnode->weight=weight;
     newnode->next=curr->next;
     curr->next=newnode;
-}
+}*/
 
-// void AddConversion(struct Node** head_ref, int dest,int weight)
-// {
-//     /* 1. allocate node */
-//     struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
+ void AddConversion(struct Node** head_ref, int dest,int weight)
+{
+    /* 1. allocate node */
+     struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
    
-//     /* 2. put in the data  */
-//     new_node->dest  = dest;
-//     new_node->weight  = weight;
-//     /* 3. Make next of new node as head */
-//     new_node->next = (*head_ref);
+     /* 2. put in the data  */
+     new_node->dest  = dest;
+    new_node->weight  = weight;
+  /* 3. Make next of new node as head */
+    new_node->next = (*head_ref);
    
     /* 4. move the head to point to the new node */
-//     (*head_ref)    = new_node;
-// }
+    (*head_ref)    = new_node;
+ }
 void AddCurrency(int c,bank* G)
 {
     G->refer[c]= AVAILABLE;
@@ -293,7 +293,7 @@ long long int bestpath(bank* arr[],int from ,int to,int delete[])
       else A[i]=INFINITY;
      }
     int x= find_min(A,num);
-    if(A[x]!=INFINITY){
+    if(num!=0 && A[x]<INFINITY){
     printf("Bank_name:%s Cost:%lld\n",arr[x]->name,A[x]);
     printf("path: ");
     printpath(Djistra(arr[x],from,to),from,to);
