@@ -1,5 +1,3 @@
-# Currency_Exchange
-
 # Introduction:
 
 In this project , we have assumed that maximum number of banks is given and that is used as MAX and the maximum number of currencies
@@ -16,6 +14,17 @@ Struct Node has the currency (in form of number),weight(cost of conversion),name
 
 Struct stTable is used for best way path.It is used in Djistra.
 We used Queue's in Djistra for best way path and heap's for low complexity.
+
+//////////////////////////
+
+# Compilation
+
+Run generator.c to create the required text files.
+	>gcc generator.c
+	>./a.out>file.txt
+Then run input.c to compute the files.
+	>gcc input2.c
+	>./a.out
 
 //////////////////////////
 # Instructions:
@@ -80,8 +89,8 @@ Example :  printbankinfo
      In this it exit from program.
 
 ////////////////////////////////////////
-
 # Time complexicty : O(V)
+
 For createGraph function which uses malloc and some stringcopy functions and loops
 
 Time complexicty : O(N*V) worst-case
@@ -103,7 +112,10 @@ For AddConversion we take the address of bank and currencies involved in the con
 Time complexity: O((num+V)*(ElogV+VlogE))  where e is edge and v is vertices
 For bestpath we used Djistra algorithm which runs over all the banks added and find out the least cost.
 
+# Limitations
 
+Our program currently accepts the universal set of currency names in the beginning of the program. We have created a generator that generates random 3 letter strings to represent these names.
+We also set the max number of currencies and max number of banks before the program begins. This shouldn't pose a problem considering there are only 180 currencies in the world and our program can handle much more than that.
 
 
 
