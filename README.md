@@ -117,6 +117,7 @@ For bestpath we used Djistra algorithm which runs over all the banks added and f
 Our program currently accepts the universal set of currency names in the beginning of the program. We have created a generator that generates random 3 letter strings to represent these names.
 We also set the max number of currencies and max number of banks before the program begins. This shouldn't pose a problem considering there are only 180 currencies in the world and our program can handle much more than that.
 
+It also uses numbers to represent banknames when calling function although it does print out the actual name of the bank when the 'print bank info' or the 'best path' option is chosen.
 
 
 
