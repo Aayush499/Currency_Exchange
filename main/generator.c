@@ -43,6 +43,7 @@ void genStr(char arr[], int size)
 
 int main(void)
 {
+    srand(time(0));
     FILE* fp;
     fp = fopen("names.txt", "w");
     char names[N][4];
@@ -55,10 +56,10 @@ int main(void)
     int c;
     int curr, nBank, src, dest, wei, vert, edg;
     char name_bank[5];
-    srand(time(0));
+    
     for (int a = 0; a < MAX_INSTRUCTIONS; a++)
     {
-
+        
         c = rand() % 9 + 1;
         switch (c)
         {
@@ -68,6 +69,11 @@ int main(void)
             vert = ranNo(N + 1);
             edg = ranNo(vert * (vert - 1));
             printf("%s %d %d\n", name_bank, vert, edg);
+            for (int i=0; i<vert; i++)
+            {
+                curr = ranNo(N);
+                printf("%s\n", names[curr]);
+            }
             for (int i = 0; i < edg; i++)
             {
                 src = ranNo(N);
