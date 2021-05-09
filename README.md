@@ -80,7 +80,8 @@ Example :  printbankinfo
      In this it exit from program.
 
 ////////////////////////////////////////
-Time complexicty : O(V)
+
+# Time complexicty : O(V)
 For createGraph function which uses malloc and some stringcopy functions and loops
 
 Time complexicty : O(N*V) worst-case
