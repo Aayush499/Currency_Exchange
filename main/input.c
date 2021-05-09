@@ -77,7 +77,7 @@ int main()
                   else printf("Banks can't be added\n");
                   for(int i= 0;i<n;i++)
                   {
-        AddConversion(&arr_banks[num]->head[arr[i].src],arr[i].dest,arr[i].weight);
+        AddConversion(&arr_banks[num-1]->head[arr[i].src],arr[i].dest,arr[i].weight);
                   }
                   free(arr);
                   free(ver);
