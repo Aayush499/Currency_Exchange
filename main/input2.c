@@ -166,7 +166,7 @@ int main()
                   fscanf(fp, "%c%s %s", &buf, curren, curren2);
                   src = findpos(curren);
                   dest = findpos(curren2);
-                  bestpath(arr_banks, src, dest, delete);
+                  bestpath(arr_banks, src, dest, delete, curr_names);
                   //getchar();
                   break;
             case (8):
