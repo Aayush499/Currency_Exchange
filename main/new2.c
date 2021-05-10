@@ -297,18 +297,18 @@ struct stTable *Djistra(bank *G, int from, int to)
     return myTable;
 }
 
-void printpath(struct stTable *T, int from, int to)
+void printpath(struct stTable *T, int from, int to, char names[][4])
 {
     int x = to;
     while (x != from)
     {
-        printf("%d<--", x);
+        printf("%s<--", names[x]);
         x = T->pPrevious_vertex[x];
     }
-    printf("%d\n", from);
+    printf("%s\n", names[from]);
 }
 
-long long int bestpath(bank *arr[], int from, int to, int delete[])
+long long int bestpath(bank *arr[], int from, int to, int delete[], char names[][4])
 {
     long long int A[MAX];
     for (int i = 0; i < num; i++)
@@ -323,10 +323,8 @@ long long int bestpath(bank *arr[], int from, int to, int delete[])
     {
         printf("Bank_name:%s Cost:%lld\n", arr[x]->name, A[x]);
         printf("path: ");
-        printpath(Djistra(arr[x], from, to), from, to);
+        printpath(Djistra(arr[x], from, to), from, to, names);
     }
     else
         printf("NOT POSSIBLE\n");
 }
-
-
